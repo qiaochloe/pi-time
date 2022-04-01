@@ -1,3 +1,6 @@
+import os
+from dotenv import load_dotenv
+
 import time
 import schedule
 
@@ -12,9 +15,11 @@ chrome_options.add_argument("--window-size=1920,1080")
 
 driver = webdriver.Chrome(options=chrome_options)
 
-username = '' # Add your Discord login username or email
-password = '' # Add your Discord login password
-channel = '' # Add the full url of the channel you want to send the message to
+load_dotenv()
+
+username = os.getenv("USERNAME") 
+password = os.getenv("PASSWORD")
+channel = os.getenv("CHANNEL")
 
 def pi_time():
     driver.get("https://discord.com/login")
