@@ -25,14 +25,11 @@ def pi_time():
     driver.get("https://discord.com/login")
     time.sleep(5)
     
-    username_input = driver.find_element_by_name('email')
-    username_input.send_keys(username)
+    driver.find_element_by_name('email').send_keys(username)
     
-    password_input = driver.find_element_by_name('password')
-    password_input.send_keys(password)
+    driver.find_element_by_name('password').send_keys(password)
 
-    login_button = driver.find_element_by_xpath('//button[@type="submit"]')
-    login_button.click()
+    driver.find_element_by_xpath('//button[@type="submit"]').click()
 
     print(">>Login complete!")
     time.sleep(10)
